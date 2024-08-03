@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('background-image.jpg') center/cover;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .music-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #ecf0f1;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #spotify-button {
+            background-color: #1db954;
+        }
+
+        #apple-music-button {
+            background-color: #ff3b30;
+        }
+
+        .music-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h1>Playlist Generator</h1>
+
+    <div class="button-container">
+        <a href="/spotify" class="music-button" id="spotify-button">
+            <!-- <img src="spotify-logo.png" alt="Spotify Logo" class="music-logo"> -->
+            Login with Spotify
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+give me a playlist for a road trip with 10 songs listed as a json list for python like this: [{'song name': <song name>, 'artist': <artist>, {'song name': <song name>, 'artist': <artist>}] and put it all in one line

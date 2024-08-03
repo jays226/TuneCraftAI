@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('background-image.jpg') center/cover;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #34495e;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .search-container {
+            margin-top: 20px;
+        }
+
+        .search-bar {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .search-button {
+            display: inline-block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #ecf0f1;
+            background-color: #1db954;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #17a249;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .home-button {
+            display: inline-block;
+            text-align: left;
+            margin: 10px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #ecf0f1;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #3498db;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Playlist Generator</h1>
+    </header>
+
+
+
+    <div class="search-container">
+    <form action="/playlist" method="post">
+        <label for="name" style="font-size: 20px; margin-right: 10px;">Playlist Name:</label>
+         <input type="text" id="name" class="search-bar" name="name" placeholder="Type here">
+        <br>
+        <label for="preferences" style="font-size: 20px; margin-right: 10px;">Enter your preferences:</label>
+         <input type="text" id="preferences" class="search-bar" name="preferences" placeholder="E.g., hype rap, road trip, study r&b...">
+        <br>
+        <label for="number" style="font-size: 20px; margin-right: 10px;">Number of songs:</label>
+         <input type="text" id="number" class="search-bar" name="number" placeholder="E.g., 20">
+        <br>
+        <input class="search-button" id="search-button" type="submit" value="Generate Playlist">
+    </form>
+</div>
+    <div class="button-container">
+        <a href="/" class="home-button">
+            Home
+        </a>
+    </div>
+</div>
+</body>
+</html>
