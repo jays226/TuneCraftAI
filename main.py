@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect, make_response, url_for, session, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 import json
 
@@ -6,10 +7,17 @@ import time
 
 import ai
 
-
-
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+
+import sqlite3
+
+# conn = sqlite3.connect('database.db')
+# print('Connected to DB successfully')
+
+# conn.execute('CREATE TABLE user_data (username TEXT, data JSON)')
+
+# conn.close()
 
 #CONSTANTS
 
@@ -50,6 +58,13 @@ global sp
 
 app = Flask(__name__)
 
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://root:{mysql_password}@localhost/user_data'
+# app.config['SECRET_KEY'] = 'your_secret_key'
+
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
+
+
 app.config["SESSION COOKIE NAME"] = "Spotify Cookie"
 app.secret_key = 'ufhewiuphgfuierhwfu&#3942'
 
@@ -80,7 +95,7 @@ def home():
         token_info = get_token()
     except:
         print("User not logged in")
-        return redirect('/spotify')
+        return redirect('/')
     
     sp = spotipy.Spotify(auth=token_info['access_token'])
     
@@ -93,12 +108,17 @@ def home():
     playlists = sp.current_user_playlists()
 
 
+
     return render_template(
-        'test.html',
+        'home2.html',
         name=disp_name, 
         image = profile_img
         )
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('main'))
 
 
 @app.route('/playlist', methods=['POST'])
