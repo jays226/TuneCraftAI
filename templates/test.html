@@ -18,13 +18,19 @@
         header {
             padding: 20px;
             background-color: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
 
-        h1 {
+                h1 {
             font-size: 48px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
         }
 
         .search-container {
@@ -56,56 +62,64 @@
         .search-button:hover {
             background-color: #17a249;
         }
+
         .button-container {
-            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        .home-button {
-            display: inline-block;
-            text-align: left;
-            margin: 10px;
-            padding: 15px 20px;
+        .profile-button, .logout-button {
+            padding: 10px 15px;
             text-decoration: none;
             color: #ecf0f1;
+            background-color: #3498db;
             border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            background-color: #3498db;
         }
 
-        .home-button:hover {
+        .logout-button {
+            background-color: #e74c3c;
+        }
+
+        .profile-button:hover, .logout-button:hover {
             background-color: #2980b9;
         }
+
+        .logout-button:hover {
+            background-color: #c0392b;
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Playlist Generator</h1>
+        <h1>TuneCraft AI</h1>
+        <div class="button-container">
+            <a href="/profile" class="profile-button">Profile</a>
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
     </header>
 
-
-
     <div class="search-container">
-    <form action="/playlist" method="post">
-        <label for="name" style="font-size: 20px; margin-right: 10px;">Playlist Name:</label>
-         <input type="text" id="name" class="search-bar" name="name" placeholder="Type here">
-        <br>
-        <label for="preferences" style="font-size: 20px; margin-right: 10px;">Enter your preferences:</label>
-         <input type="text" id="preferences" class="search-bar" name="preferences" placeholder="E.g., hype rap, road trip, study r&b...">
-        <br>
-        <label for="number" style="font-size: 20px; margin-right: 10px;">Number of songs:</label>
-         <input type="text" id="number" class="search-bar" name="number" placeholder="E.g., 20">
-        <br>
-        <input class="search-button" id="search-button" type="submit" value="Generate Playlist">
-    </form>
-</div>
-    <div class="button-container">
-        <a href="/" class="home-button">
-            Home
-        </a>
+        <form action="/playlist" method="post">
+            <label for="name" style="font-size: 20px; margin-right: 10px;">Playlist Name:</label>
+            <input type="text" id="name" class="search-bar" name="name" placeholder="Type here">
+            <br>
+            <label for="preferences" style="font-size: 20px; margin-right: 10px;">Enter your preferences:</label>
+            <input type="text" id="preferences" class="search-bar" name="preferences" placeholder="E.g., hype rap, road trip, study r&b...">
+            <br>
+            <label for="number" style="font-size: 20px; margin-right: 10px;">Number of songs:</label>
+            <input type="text" id="number" class="search-bar" name="number" placeholder="E.g., 20">
+            <br>
+            <input class="search-button" id="search-button" type="submit" value="Generate Playlist">
+        </form>
     </div>
-</div>
+
 </body>
 </html>
