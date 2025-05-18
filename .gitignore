@@ -1,2 +1,3 @@
-.env
+# Ignore environment files
+*.env
 API_KEY.env
