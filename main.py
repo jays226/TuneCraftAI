@@ -14,6 +14,7 @@ import sqlite3
 
 #CONSTANTS
 
+## ADD THIS FILE
 API_KEY = open("API_KEY.env", 'r').read()
 
 BASE_URL = 'https://api.spotify.com/v1'
