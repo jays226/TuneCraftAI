@@ -1,5 +1,4 @@
 from flask import Flask, request, redirect, make_response, url_for, session, render_template
-from flask_sqlalchemy import SQLAlchemy
 
 import json
 
@@ -12,42 +11,16 @@ from spotipy.oauth2 import SpotifyOAuth
 
 import sqlite3
 
-# conn = sqlite3.connect('database.db')
-# print('Connected to DB successfully')
-
-# conn.execute('CREATE TABLE user_data (username TEXT, data JSON)')
-
-# conn.close()
 
 #CONSTANTS
 
-API_KEY = open("API_KEY", 'r').read()
+API_KEY = open("API_KEY.env", 'r').read()
 
 BASE_URL = 'https://api.spotify.com/v1'
 
 client_id = "c975a477d8ea413badf29f520594844e"
 client_secret = "1c88d0b8f5ee4d56bd6daf7fd8b2127f"
 redirect_uri = 'http://127.0.0.1:5000/redirect'
-
-
-######## CHATGPT
-
-# openai.api_key = API_KEY
-
-# response = openai.ChatCompletion(
-#     model='gpt-3.5-turbo',
-#     message=[
-#         {"role": "user", "content": "What is the difference between Celsius and Fahrenheit?"}
-#     ]
-# )
-
-# print(response)
-
-
-
-############
-
-
 
 
 
@@ -57,12 +30,6 @@ global sp
 
 
 app = Flask(__name__)
-
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://root:{mysql_password}@localhost/user_data'
-# app.config['SECRET_KEY'] = 'your_secret_key'
-
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
 
 
 app.config["SESSION COOKIE NAME"] = "Spotify Cookie"
@@ -110,7 +77,7 @@ def home():
 
 
     return render_template(
-        'home2.html',
+        'test.html',
         name=disp_name, 
         image = profile_img
         )
